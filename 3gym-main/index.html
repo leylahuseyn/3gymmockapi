@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+    <div class="container">
+        <div class="row ">
+            <div class="col-4 d-flex p-5">
+            <h5>We believe we helps people <br>
+                for happier lives</h5>
+                </div>
+                <div class="col-4 d-flex p-5">
+                <img src="https://preview.colorlib.com/theme/gym/img/logo.png" alt="">
+            </div>
+            <div class="col-4 d-flex">
+            <p class="p-5">+880 123 12 658 439</p>
+                <i class="las la-phone p-4"></i>
+            </div>
+        </div>
+    </div></header>
+    <div class="container nav2 p-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid ">
+              <a class="navbar-brand ms-4 text-danger" href="#">Home</a>
+              <a class="navbar-brand ms-4" href="#">We offer</a>
+              <a class="navbar-brand ms-4" href="#">Top course</a>
+              <a class="navbar-brand ms-4" href="#">Schedule</a>
+              <a class="navbar-brand ms-4" href="#">Plan</a>
+              <a class="navbar-brand ms-4" href="#">Trainer</a>
+              <a class="navbar-brand ms-4" href="#">Pages</a>
+            </div>
+          </nav>
+    </div>
+    <div class="fitness">
+    <!-- <img src="https://fsutransfers.files.wordpress.com/2021/04/pexels-photo-841130.jpeg?w=1568" alt=""> -->
+        <b class="b">REAL FITNESS</b>
+        <b class="b2"> DEPENDS ON EXERCISE</b>
+        <p>SHAPE YOUR BODY WELL.</p>
+    </div>
+    <div class="card3 p-5">
+        <b>We care about what we offer</b>
+        <p>Who are in extremely love with eco friendly system.</p>
+    </div>
+    <section>
+        <div class="container section5">
+             <div class="card-group">
+            <div class="card text-center shadow  rounded bg-body">
+              <img src="https://preview.colorlib.com/theme/gym/img/o1.png" class="card-img-top mx-auto" alt="...">
+              <div class="card-center card-body">
+                <h5 class="card-title">Regular Exercise</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                 </div>
+            </div>
+            <div class="card text-center shadow  rounded bg-body">
+              <img src="https://preview.colorlib.com/theme/gym/img/o2.png" class="card-img-top mx-auto"  alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Training on the go</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+               </div>
+            </div>
+            <div class="card text-center shadow  rounded bg-body">
+                <img src="https://preview.colorlib.com/theme/gym/img/o3.png" class="card-img-top mx-auto" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Body Building Packages</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="section3 p-5">
+        <div class="container">
+            <div class="container text-center">
+                    <b class="b d-block p-3">Top Courses That are open for Students</b>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+            <div class="row datas">
+               
+            </div>
+        </div>
+    </section>
+    <section class="section2">
+        <div class="container text-center">
+            <b class="b d-block p-3">Huge Transaction in last Week</b>
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore <br>
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</span>    
+            <button class="d-block mx-auto">Become a member</button>
+        </div>
+        
+    </section>
+   <script>
+    fetch('https://646e04989c677e23218adb6d.mockapi.io/cards')
+    .then(res=>res.json())
+    .then(data=>{
+        const row =document.querySelector('.datas')
+        row.innerHTML=''
+        data.forEach(el => {
+            row.innerHTML+=`
+            <div class=" col-md-4">
+                    <div class="card">
+                      <img src="${el.image}" width-100 alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">${el.name}</h5>
+                        <p class="card-text">${el.price}</p>
+                       </div>
+                    </div>
+                </div>
+            `
+        })
+    }).catch(err=>console.log('error'))
+
+
+//     document.addEventListener('click', function(e){
+//       const deleteBtn = e.target.closest('.btn-danger')
+//         if(deleteBtn){
+//             const fName = deleteBtn.parentElement.parentElement.children[1].innerText
+//             Swal.fire({
+//                 title: fName,
+//                 text: "Eminsiniz mi",
+//                 icon: 'warning',
+//                 showCancelButton: true,
+//                 confirmButtonColor: '#3085d6',
+//                 cancelButtonColor: '#d33',
+//                 confirmButtonText: 'beli',
+//                 cancelButtonText: 'xeyr'
+// }).then((result) => {
+//   if (result.isConfirmed) {
+//     Swal.fire(
+//       'Deleted!',
+//       'Your file has been deleted.',
+//       'success'
+//     )
+//   }
+// })
+//         }
+        
+//     })
+// document.addEventListener('click', function(e){
+//          const deleteBtn = e.target.closest('.btn-danger')
+//             if(deleteBtn){
+//               const fName = deleteBtn.parentElement.parentElement.children[1].innerText
+//                 Swal.fire({
+//                     title: fName,
+//                     text: "silinsin mi?",
+//                     icon: 'warning',
+//                     showCancelButton: true,
+//                     confirmButtonColor: '#3085d6',
+//                     cancelButtonColor: '#d33',
+//                     confirmButtonText: 'beli!',
+//                     cancelButtonText: 'xeyr!'
+//             }).then((result) => {
+//                 if (result.isConfirmed) {
+//                     fetch('https://646e04989c677e23218adb6d.mockapi.io/cards/' +deleteBtn.parentElement.parentElement.children[0].innerText,
+//                     {
+//                         method: 'DELETE'
+//                     }).then(res=>{
+//                         if(res.ok){
+//                             Swal.fire(
+//                                 'silindi!',
+//                                 'Your file has been deleted.',
+//                                 'success' )
+//                                 getdatas();
+           
+//                         }
+//                         else{
+//                             Swal.fire(
+//                                 'oops!',
+//                                 'Your file has been deleted.',
+//                                 'danger')
+//                         }
+//                     })
+//                     .catch(()=> Swal.fire('oops!','Your file has been deleted.','danger'))
+                    
+//   }
+// })
+//             }
+//        })
+
+// document.addEventListener('click', function (e) {
+//             const deleteBtn = e.target.closest('.btn-danger')
+//             if (deleteBtn) {
+//                 const fName = deleteBtn.parentElement.parentElement.children[1].innerText
+//                 Swal.fire({
+//                     title: fName,
+//                     text: "Silinsin mi?",
+//                     icon: 'warning',
+//                     showCancelButton: true,
+//                     confirmButtonColor: '#3085d6',
+//                     cancelButtonColor: '#d33',
+//                     confirmButtonText: 'Bəli',
+//                     cancelButtonText: 'Xeyr'
+//                 }).then((result) => {
+//                     if (result.isConfirmed) {
+//                         fetch('https://646e04989c677e23218adb6d.mockapi.io/cards/'+deleteBtn.parentElement.parentElement.children[0].innerText,
+//                         {
+//                             method : 'DELETE'
+//                         })
+//                         .then(res=>{
+//                             if (res.ok) {
+//                                 Swal.fire(
+//                                     'Silindi!',
+//                                     'Əməliyyat uğurla başa çatdı.',
+//                                     'success'
+//                                 )
+//                                 getLastestsDatas();
+//                             }
+//                             else{
+//                                 Swal.fire(
+//                                     'Ooops!',
+//                                     'Xəta baş verdi.',
+//                                     'danger'
+//                                 )
+//                             }
+//                         })
+//                         .catch(()=>Swal.fire('Ooops!','Xəta baş verdi.','danger'))
+//                     }
+//                 })
+//             }
+//         })
+
+   </script>
+</body>
+</html>
